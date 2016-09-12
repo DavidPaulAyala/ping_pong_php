@@ -4,26 +4,23 @@
         function makePingPong($input_number)
         {
             $number = 1;
-            $output = "";
+            $outputArray = array();
             while ($number <= $input_number){
                 if ($number % 15 === 0) {
-                    $output .= 'ping-pong';
+                    array_push($outputArray, 'ping-pong');
                 }
                 elseif ($number % 3 === 0) {
-                    $output .= 'ping';
+                    array_push($outputArray, 'ping');
                 }
                 elseif ($number % 5 === 0) {
-                    $output .= 'pong';
+                    array_push($outputArray, 'pong');
                 }
                 else {
-                    $output .= $number;
-                }
-                if ($number < $input_number) {
-                    $output .= " ";
+                    array_push($outputArray, $number);
                 }
                 ++$number;
             }
-            return $output;
+            return $outputArray;
         }
     }
 ?>
